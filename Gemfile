@@ -9,6 +9,7 @@ gem "paperclip"
 gem "rmagick"
 gem "will_paginate"
 gem "jquery-rails"
+gem "formtastic"
 
 group :development, :test do
   gem "rspec"

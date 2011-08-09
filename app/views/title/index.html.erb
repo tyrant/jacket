@@ -1,0 +1,9 @@
+<% content_for :page_title %>
+  <%= @page_title %>
+<% end %>
+
+<ul>
+  <% @titles.each do |title| %>
+    <li><%= title.title %></li>
+  <% end %>
+</ul>
