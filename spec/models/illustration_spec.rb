@@ -19,19 +19,19 @@ describe Illustration do
   
   it "deletes an Illustration" do
     sign_in @illustration_owner
-    @illustration = Factory.illustration, :user => @illustration_owner
+    @illustration = Factory :illustration, :user => @illustration_owner
     assert @illustration.destroy
   end
   
   it "doesn't delete an Illustration if the user doesn't own it" do
     sign_in @illustration_non_owner
-    @illustration = Factory.illustration, :user => @illustration_owner
+    @illustration = Factory :illustration, :user => @illustration_owner
     assert !@illustration.destroy
   end
   
   it "doesn't delete an Illustration if there's no logged-in user" do
     # sign_in nil
-    @illustration = Factory.illustration, :user => @illustration_owner
+    @illustration = Factory :illustration, :user => @illustration_owner
     assert !@illustration.destroy
   end
   
