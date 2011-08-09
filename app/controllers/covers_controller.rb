@@ -1,4 +1,4 @@
-class CoverController < ApplicationController
+class CoversController < ApplicationController
 
   authorize_resource
   

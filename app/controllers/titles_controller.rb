@@ -1,4 +1,4 @@
-class TitleController < ApplicationController
+class TitlesController < ApplicationController
 
   authorize_resource
   
