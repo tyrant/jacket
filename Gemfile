@@ -30,8 +30,14 @@ gem 'sqlite3'
 #   gem 'webrat'
 # end
 
+group :test do
+  gem "rspec"
+  gem "rspec-rails"
+  gem "autotest"
+  gem "autotest-rails"
+  gem "factory_girl_rails"
+end
+
 gem "json"
-gem "rspec"
-gem "rspec-rails"
 gem "devise"
-gem "factory_girl_rails"
+
