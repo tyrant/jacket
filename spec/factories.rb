@@ -8,8 +8,8 @@ Factory.define :title do |t|
 end
 
 Factory.define :illustration do |i|
-  i.image File.new(Rails.root + 'public/rails.png')
-  t.user { |u| u.association(:user) }
+  i.image File.new(Rails.root + 'public/robots.txt')
+  i.user { |u| u.association(:user) }
 end
 
 Factory.define :cover do |c|
