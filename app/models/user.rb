@@ -10,5 +10,9 @@ class User < ActiveRecord::Base
   has_many :titles
   has_many :illustrations
   
+  # Stub!
+  def admin?
+    false
+  end
   
 end
