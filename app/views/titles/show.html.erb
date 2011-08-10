@@ -1,0 +1,5 @@
+<strong>Title:</strong> <%= @title.title %>
+
+<% if @title.user == current_user %>
+  <%= link_to 'Delete', @title, :method => 'delete', :confirm => 'Are you sure?' %>
+<% end %>

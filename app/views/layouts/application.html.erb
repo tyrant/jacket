@@ -8,11 +8,18 @@
 </head>
 <body>
   <div id="user_nav">
-    <% if current_user and current_user.signed_in? %>
-      Signed in as <%= current_user.name %>. Not you? <%= link_to 'Sign out', destroy_user_session_path %>.
+    <% if user_signed_in? %>
+      Signed in as <%= current_user.email %>. Not you? <%= link_to 'Sign out', destroy_user_session_path, :action => 'delete' %>.
     <% else %>
       <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>.
     <% end %>
+  </div>
+  <div id="site_nav">
+    <ul>
+      <li><%= link_to 'Titles', titles_path %></li>
+      <li><%= link_to 'Illustrations', illustrations_path %></li>
+      <li><%= link_to 'Covers', covers_path %></li>
+    </ul>
   </div>
 
 <h1><%= @page_title %></h1>

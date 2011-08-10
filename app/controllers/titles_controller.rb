@@ -19,8 +19,9 @@ class TitlesController < ApplicationController
   
   def create 
     @title = Title.new(params[:title])
+    @title.user = current_user
     if @title.save
-      redirect_to @title 
+      redirect_to @title, :notice => 'New Title created!'
     else
       render :action => 'new'
     end 

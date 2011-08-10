@@ -2,9 +2,13 @@
 <% if @titles.length > 0 %>
   <ul>
     <% @titles.each do |title| %>
-      <li><%= title.title %></li>
+      <li><%= link_to title.title, title_path(title) %></li>
     <% end %>
   </ul>
 <% else %>
-  No book titles exist. <%= link_to 'Add one!', new_title_path %>
+  No book titles exist.
+<% end %>
+
+<% if user_signed_in? %>
+ <%= link_to 'Add a new Title!', new_title_path %>
 <% end %>
