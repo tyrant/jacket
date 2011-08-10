@@ -1,7 +1,10 @@
 <% if @illustrations.length > 0 %>
+  <div class="digg_pagination">
+    <%= will_paginate @illustrations %>
+  </div>
   <ul>
     <% @illustrations.each do |illustration| %>
-      <li><%= image_tag illustration.illustration.url(:thumb) %></li>
+      <li><%= link_to raw('<img src="' + illustration.illustration.url(:thumb) + '" />'), illustration %></li>
     <% end %>
   </ul>
   <div class="digg_pagination">

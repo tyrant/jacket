@@ -1,4 +1,7 @@
 <% if @titles.length > 0 %>
+  <div class="digg_pagination">
+    <%= will_paginate @titles %>
+  </div>
   <ul>
     <% @titles.each do |title| %>
       <li><%= link_to title.title, title_path(title) %></li>
@@ -15,5 +18,7 @@
 <% end %>
 
 <% if user_signed_in? %>
- <%= link_to 'Add a new Title!', new_title_path %>
+  <%= link_to 'Add a new Title!', new_title_path %>
+<% else %>
+  <%= link_to 'Sign in', new_user_session_path %> to add a new Title.
 <% end %>

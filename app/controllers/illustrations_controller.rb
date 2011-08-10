@@ -4,7 +4,7 @@ class IllustrationsController < ApplicationController
 
   def index
     @page_title = 'All illustrations'
-    @illustrations = Illustration.paginate :page => (params.has_key?('page') ? params[:page] : 1)
+    @illustrations = Illustration.paginate :page => (params.has_key?('page') ? params[:page] : 1), :per_page => 10
   end
   
   def show

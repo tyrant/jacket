@@ -8,6 +8,7 @@
 
 User.all.each { |u| u.destroy }
 Title.all.each { |t| t.destroy }
+Illustration.all.each { |i| i.destroy }
 
 @one = User.create!(:email => '1@2.com', :password => 'blargh')
 @two = User.create!(:email => '1@3.com', :password => 'blargh')
@@ -120,11 +121,33 @@ Title.create!(:title => 'Making The Perfect Christmas Dinner: Teaching Your Turk
 Title.create!(:title => 'Why Warren Buffet Is Secretly Planning To Sellotape The Moon To The Sun', :user => @two)
 Title.create!(:title => 'Tom Cruise: Mainstream Theologian', :user => @two)
 Title.create!(:title => 'Martin Luther King: He Had A Homoerotic Dream', :user => @two)
-Title.create!(:title => 'The Story Of Adam, Eve, And Lindsay The Transsexual', :user => @two)
-Title.create!(:title => 'Eleven Different Colours, All Of Which Have Appeared On My Penis', :user => @two)
-Title.create!(:title => 'Romeo And Juliet: Re-enacting The Censored Gangbang Scene', :user => @two)
-Title.create!(:title => 'Achieve Transcendental Sexual Bliss With Velcro Condoms', :user => @two)
-Title.create!(:title => 'A Cure For Wedgies: Fact Or Fiction?', :user => @two)
-Title.create!(:title => 'Pirates: keeping parrots and the letter R in business', :user => @two)
-Title.create!(:title => '"What Are YOU Looking At?" A Passive-Aggressive Guide To Squinting [courtesy of Chris Addison]', :user => @two)
-Title.create!(:title => 'F Club Feven: A History Of Pop In The Tudor Era [courtesy of Chris Addison]', :user => @two)
+@t1 = Title.create!(:title => 'The Story Of Adam, Eve, And Lindsay The Transsexual', :user => @two)
+@t2 = Title.create!(:title => 'Eleven Different Colours, All Of Which Have Appeared On My Penis', :user => @two)
+@t3 = Title.create!(:title => 'Romeo And Juliet: Re-enacting The Censored Gangbang Scene', :user => @two)
+@t4 = Title.create!(:title => 'Achieve Transcendental Sexual Bliss With Velcro Condoms', :user => @two)
+@t5 = Title.create!(:title => 'A Cure For Wedgies: Fact Or Fiction?', :user => @two)
+@t6 = Title.create!(:title => 'Pirates: keeping parrots and the letter R in business', :user => @two)
+@t7 = Title.create!(:title => '"What Are YOU Looking At?" A Passive-Aggressive Guide To Squinting [courtesy of Chris Addison]', :user => @two)
+@t8 = Title.create!(:title => 'F Club Feven: A History Of Pop In The Tudor Era [courtesy of Chris Addison]', :user => @two)
+
+20.times do
+  @i1 = Illustration.create!(:illustration => File.open(File.join(Rails.root, '/public/images/0.jpg')), :user => @one)
+  @i2 = Illustration.create!(:illustration => File.open(File.join(Rails.root, '/public/images/20090707034905142.jpg')), :user => @two)
+  @i3 = Illustration.create!(:illustration => File.open(File.join(Rails.root, '/public/images/Bartrum1.jpg')), :user => @one)
+  @i4 = Illustration.create!(:illustration => File.open(File.join(Rails.root, '/public/images/deavaandmitenthewave.png')), :user => @two)
+  @i5 = Illustration.create!(:illustration => File.open(File.join(Rails.root, '/public/images/IMG_0375-726149.JPG')), :user => @one)
+  @i6 = Illustration.create!(:illustration => File.open(File.join(Rails.root, '/public/images/Interlaken.jpg')), :user => @two)
+  @i7 = Illustration.create!(:illustration => File.open(File.join(Rails.root, '/public/images/meadow.jpg')), :user => @one)
+  @i8 = Illustration.create!(:illustration => File.open(File.join(Rails.root, '/public/images/the_iss.jpg')), :user => @two)
+  
+  Cover.create!(:title => @t1, :illustration => @i1)
+  Cover.create!(:title => @t2, :illustration => @i2)
+  Cover.create!(:title => @t3, :illustration => @i3)
+  Cover.create!(:title => @t4, :illustration => @i4)
+  Cover.create!(:title => @t5, :illustration => @i5)
+  Cover.create!(:title => @t6, :illustration => @i6)
+  Cover.create!(:title => @t7, :illustration => @i7)
+  Cover.create!(:title => @t8, :illustration => @i8)
+end
+  
+
