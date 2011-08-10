@@ -1,3 +1,5 @@
+require 'spec_helper.rb'
+
 describe Illustration do
 
   before :each do

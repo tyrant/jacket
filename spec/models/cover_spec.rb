@@ -1,3 +1,5 @@
+require 'spec_helper.rb'
+
 describe Cover do
 
   before :each do

@@ -1,10 +1,15 @@
-
 <% if @titles.length > 0 %>
   <ul>
     <% @titles.each do |title| %>
       <li><%= link_to title.title, title_path(title) %></li>
     <% end %>
   </ul>
+  <div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @titles %>
+    </div>
+    <%= will_paginate @titles %>
+  </div>
 <% else %>
   No book titles exist.
 <% end %>

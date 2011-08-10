@@ -134,4 +134,4 @@ DEPENDENCIES
   rmagick
   rspec
   rspec-rails
-  will_paginate
+  will_paginate (~> 3.0)

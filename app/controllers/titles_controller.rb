@@ -3,7 +3,8 @@ class TitlesController < ApplicationController
   authorize_resource
   
   def index
-    @titles = Title.all
+    @titles = Title.paginate :page => (params.has_key?('page') ? params[:page] : 1)
+    
     @page_title = 'All book titles'
   end
   

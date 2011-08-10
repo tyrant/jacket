@@ -7,7 +7,7 @@ gem "devise"
 gem "cancan"
 gem "paperclip"
 gem "rmagick"
-gem "will_paginate"
+gem "will_paginate", '~> 3.0'
 gem "jquery-rails"
 gem "formtastic"
 

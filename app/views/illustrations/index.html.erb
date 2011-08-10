@@ -1,0 +1,19 @@
+<% if @illustrations.length > 0 %>
+  <ul>
+    <% @illustrations.each do |illustration| %>
+      <li><%= image_tag illustration.illustration.url(:thumb) %></li>
+    <% end %>
+  </ul>
+  <div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @illustrations %>
+    </div>
+    <%= will_paginate @illustrations %>
+  </div>
+<% else %>
+  No illustrations exist.
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to 'Upload a new illustration!', new_illustration_path %>
+<% end %>
