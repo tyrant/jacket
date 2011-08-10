@@ -1,5 +1,5 @@
 class TitlesController < ApplicationController
-
+  
   authorize_resource
   
   def index
@@ -28,9 +28,10 @@ class TitlesController < ApplicationController
   end
   
   def destroy
+    puts 'INSIDE DESTROY'
     @title = Title.find(params[:id])
     @title.destroy
-    redirect_to :index
+    redirect_to titles_url
   end
 
 end

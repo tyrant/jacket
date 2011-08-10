@@ -13,7 +13,7 @@ class SetUpTables < ActiveRecord::Migration
     end
     
     create_table :titles do |t|
-      t.string :title
+      t.text :title
       t.timestamps
     end
      
