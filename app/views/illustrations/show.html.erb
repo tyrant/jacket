@@ -1,4 +1,4 @@
-<%= image_tag @illustration.illustration.url %>
+<%= image_tag @illustration.illustration.url(:large) %>
 
 <% if @illustration.user == current_user %>
   <%= link_to 'Delete', @illustration, :method => 'delete', :confirm => 'Are you sure?' %>
