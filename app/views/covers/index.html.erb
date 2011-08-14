@@ -1,0 +1,27 @@
+<% if @covers.length > 0 %>
+  <div class="digg_pagination">
+    <%= will_paginate @covers %>
+  </div>
+  <ul>
+  
+    <% @covers.each do |cover| %>
+      <li>
+        <%= link_to raw('<img src="' + cover.illustration.illustration.url(:thumb) + '" />'), cover %>
+        <%= link_to cover.title.title, cover %>
+      </li>
+    <% end %>
+    
+  </ul>
+  <div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @covers %>
+    </div>
+    <%= will_paginate @covers %>
+  </div>
+<% else %>
+  No covers exist.
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to 'Upload a new cover!', new_cover_path %>
+<% end %>

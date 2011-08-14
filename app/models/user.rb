@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  has_many :titles
-  has_many :illustrations
+  has_many :titles, :dependent => :destroy
+  has_many :illustrations, :dependent => :destroy
   
   # Stub!
   def admin?

@@ -1,7 +1,7 @@
 class Illustration < ActiveRecord::Base
 
   belongs_to :user
-  has_many :covers
+  has_many :covers, :dependent => :destroy
   
   has_attached_file :illustration,
     :styles => {
